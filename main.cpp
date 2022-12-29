@@ -52,9 +52,6 @@ std::vector<std::vector<int> > findBoundingBox(std::vector<std::vector<int> > &i
     return bounding_boxes;
 }
 
-void hi(){
-    std::cout << "Hi";
-}
 int main() {
     auto start = std::chrono::steady_clock::now();
     const size_t n_images = 10;
