@@ -9,10 +9,10 @@
 /**
  * Perform DFS algorithm to get bounding box for each connected component
  *
- * @param image 2d array contains pixel values
- * @param visited 2d array is used to mark whether a pixel is visited or not
- * @param i, j the position of current pixel
- * @param up, down, left, right indicates (up, left) and (down, right) points of bounding box
+ * @param image - 2d array contains pixel values
+ * @param visited - 2d array is used to mark whether a pixel is visited or not
+ * @param i, j - the position of current pixel
+ * @param up, down, left, right - indicates (up, left) and (down, right) points of bounding box
  */
 void dfs(std::vector<std::vector<int> > &image, std::vector<std::vector<bool> > &visited, int i, int j, int &up, int &down, int &left, int &right) {
     if (i < 0 || i >= image.size() || j < 0 || j >= image[0].size() || image[i][j] == 0 || visited[i][j]) return;
@@ -30,10 +30,10 @@ void dfs(std::vector<std::vector<int> > &image, std::vector<std::vector<bool> > 
 /**
  * Perform DFS algorithm to find all connected components and get bounding box for each of them
  *
- * @param image 2d array contains pixel values
- * @param visited 2d array is used to mark whether a pixel is visited or not
- * @param n the n-th image
- * @return bounding_boxes bounding boxes of objects in image
+ * @param image - 2d array contains pixel values
+ * @param visited - 2d array is used to mark whether a pixel is visited or not
+ * @param n - the n-th image
+ * @return bounding_boxes - bounding boxes of objects in image
  */
 std::vector<std::vector<int> > findBoundingBox(std::vector<std::vector<int> > &image, std::vector<std::vector<bool> > &visited, int n) {
     std::vector<std::vector<int> > bounding_boxes;
@@ -91,15 +91,10 @@ int main() {
             std::vector<std::vector<int> > bounding_boxes = findBoundingBox(image, visited, n);
 
             outfile << "Bounding boxes (top, left, height, width) of " << n << "-th image is: ";
-            std::cout << "Bounding boxes (top, left, height, width) of " << n << "-th image is: ";
-
             for (const auto & bounding_box : bounding_boxes) {
                 outfile << "(" << bounding_box[0] << ", " << bounding_box[1] << ", " << bounding_box[2] << ", " << bounding_box[3] << ") ";
-                std::cout << "(" << bounding_box[0] << ", " << bounding_box[1] << ", " << bounding_box[2] << ", " << bounding_box[3] << ") ";
             }
-            outfile << "\n";
-            std::cout << "\n";
-            
+            outfile << "\n";            
         }
     }
 
