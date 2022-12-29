@@ -25,3 +25,9 @@ Please note:
 
 1. Don't use any third party library to implement the algorithm (you can do better than them). However, you can use any tool to visualise the images for debugging purposes.
 2. Make comments wherever relevant
+
+Usage:
+```sh 
+g++ -std=c++11 main.cpp -o main
+./main
+```
